@@ -12,12 +12,6 @@ let package = Package(
             name: "CommonUI",
             targets: ["CommonUI"]),
         .library(
-            name: "ExamplePackage",
-            targets: ["ExamplePackage"]),
-        .library(
-            name: "Features",
-            targets: ["Features"]),
-        .library(
             name: "Helpers",
             targets: ["Helpers"]),
         .library(
@@ -31,8 +25,6 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "ExamplePackage"),
-        .target(
             name: "Helpers"),
         .target(
             name: "Theme"),
@@ -42,11 +34,7 @@ let package = Package(
         .target(
             name: "CommonUI",
             dependencies: ["Helpers", "Theme"], resources: [.process("Cells/Resources")]),
-        .target(
-            name: "Features",
-        dependencies: ["CommonUI", "Helpers", "Theme"]),
         .testTarget(
-            name: "ExamplePackageTests",
-            dependencies: ["ExamplePackage"]),
+            name: "ExamplePackageTests"),
     ]
 )
